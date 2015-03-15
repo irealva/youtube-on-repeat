@@ -1,0 +1,35 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if user_id  %}
+    <title>{{ user_id }} - Video</title>
+    {% else %}
+    <title>Welcome to YoutubeonRepeat</title>
+    {% endif %}
+    <h1>Hi, {{ user_id }} {{ vid_id  }}</h1>
+
+    <div id="main">
+    </div>
+
+    <div id="playerContainer">
+      <h2 data-bind="text: count"></h2>
+      <div data-bind="visible: errorLoadingPlayer">
+          <h3>there was an error loading your video</h3>
+      </div>
+      <div>
+        <div id="player">
+        </div>
+      </div>
+    </div>
+
+    <script>
+        var vid_id = '{{ vid_id | safe }}';
+        var user_id = '{{user_id | safe }}' ;
+    </script>
+    <script src="{{ url_for('.static', filename='app.js') }}"></script>
+{% endblock %}
+
+
+
