@@ -13,10 +13,6 @@
 
     <link href="{{ url_for('.static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('.static', filename='css/styles.css') }}" rel="stylesheet">
-    <script src="{{ url_for('.static', filename='js/jquery.min.js') }}"></script>
-    <script src="{{ url_for('.static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('.static', filename='js/knockout.min.js') }}"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 
 <body>
@@ -45,6 +41,10 @@
     <footer class="footer">
             <p>Irene Alvarado</p>
     </footer>
+
+    <script src="{{ url_for('.static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('.static', filename='js/bootstrap.min.js') }}"></script>
+    {% block scripts %}{% endblock %}
 
 </body>
 </html>

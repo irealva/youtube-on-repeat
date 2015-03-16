@@ -47,8 +47,15 @@
 var vid_id = '{{ vid_id | safe }}';
 var user_id = '{{ user_id | safe }}';
 </script>
-<script src="{{ url_for('.static', filename='app.js') }}"></script>
 
 <!-- /.row -->
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="{{ url_for('.static', filename='js/knockout.min.js') }}"></script>
+<script src="{{ url_for('.static', filename='app.js') }}"></script>
 
 {% endblock %}

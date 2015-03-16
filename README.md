@@ -6,14 +6,18 @@ Link to live page: [http::](http:/)
 
 ####Getting Started
 
-1) Create a 'virtualenv' and activate it
+1) Get flask
+
+`python3 -m venv flask`
+
+2) Create a 'virtualenv' and activate it
 
 `source flask/bin/activate`
 
-2) Install dependencies:
+3) Install dependencies:
 
-`pip install -r requirements.txt`
+`pip3 install -r requirements.txt`
 
-3) Run the app
+4) Run the app
 
 `./run.py`
