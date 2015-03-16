@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, session, url_for, request
+from flask import render_template, flash, redirect, session, url_for, request, jsonify
 from app import app, db
 from .models import User, Video
 
@@ -10,22 +10,19 @@ def index():
 
 @app.route('/watch', methods=['GET'])
 def watch():
-    video = request.args['v']
-    if len(video) == 0:
-        return render_template('index.html')
+    video = request.args.get('v')
 
-    vid = Video.query.get(video)
-    if vid is None:
-        flash('Video %s not found.' % video)
-        #return render_template('base.html')
+    if video is None:
+        return render_template('index.html')
 
     user_id = User.query.order_by('user_id desc').first().user_id
     user_id = user_id+1
 
-    #user = { 'user_id': user_id, 'vid_id': video, 'num_repeats': 1}
-    return render_template('watch.html', user_id=user_id, vid_id=video)
+    top_ten = Video.query.order_by('play_count desc')
 
-@app.route('/api/logsession', methods=["POST"])
+    return render_template('watch.html', user_id=user_id, vid_id=video, top_ten=top_ten)
+
+@app.route('/api/logsession', methods=['POST'])
 def log_session():
     vid_id = request.form['vid_id']
     user_id = request.form['user_id']
@@ -37,7 +34,7 @@ def log_session():
     flash('Logged user')
     return 'OK';
 
-@app.route('/api/countreplay', methods=["POST"])
+@app.route('/api/countreplay', methods=['POST'])
 def count_replay():
     vid_id = request.form['vid_id']
     user_id = request.form['user_id']
@@ -61,7 +58,16 @@ def count_replay():
     flash('Updated User Count')
     return 'OK';
 
+@app.route('/api/videos', methods=['GET'])
+def top_ten():
+    results = Video.query.order_by('play_count desc').limit(10)
 
+    json_results = []
+    for result in results:
+        v = { 'video_id' : result.video_id, 'play_count': result.play_count }
+        json_results.append(v)
+
+    return jsonify(items=json_results)
 
 
 
