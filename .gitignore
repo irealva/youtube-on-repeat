@@ -1,5 +1,4 @@
-__pycache__/
-flask/
-
 .DS_Store
+flask/
+__pycache__/
 
