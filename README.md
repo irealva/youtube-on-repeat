@@ -2,7 +2,7 @@
 
 This is a simple application that plays YouTube videos on repeat.
 
-Link to live page: [http::](http:/)
+Link to live page: [http://calm-depths-3029.herokuapp.com/index.html](http://calm-depths-3029.herokuapp.com/index.html)
 
 ####Getting Started
 
