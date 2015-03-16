@@ -1,13 +1,15 @@
 <!-- extend base layout -->
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+
+{% block content %}
 
 <div class="row">
 
-    <div class="col-sm-12 blog-main">
+    <div class="col-sm-12 main">
 
-        <div class="blog-post">
-            <div id="playerContainer">
-                <div class="text-center">
+        <div class="player-class">
+            <div class="player-center" id="playerContainer">
+                <div class="video-wrapper">
                     <div id="player">
                     </div>
                 </div>
@@ -16,20 +18,21 @@
                 <h3 class="text-center text-danger" data-bind="visible: errorLoadingPlayer">Error loading video player. <br>Please try again with another video. </h3>
             </div>
         </div>
-        <!-- /.blog-post -->
+        <!-- /.player -->
 
 
         <hr>
-        <h4>Top Videos</h4>
+        <br>
+        <h2>Top Videos</h2>
+        <br>
         <div class="list-group" id="topVideos" data-bind="foreach: topVideoList">
             <a href="#" class="list-group-item" data-bind="click: $parent.redirectVideo">
                 <div class="row vertical-align">
-                  <div class="col-sm-3 pull-left">
+                  <div class="col-sm-3 pull-left hidden-sm hidden-xs">
                     <img src="" alt="thumb" data-bind="attr: {src: img}">
                   </div>
                   <div class="col-sm-9">
                       <h4 class="list-group-item-heading" data-bind="text: title"></h4>
-                      <!--<p class="list-group-item-text" data-bind="text: count"></p>-->
                       <span class="badge" data-bind="text: count"></span>
                   </div>
                 </div>
@@ -37,7 +40,7 @@
         </div>
 
     </div>
-    <!-- /.blog-main -->
+    <!-- /.main -->
 
 </div>
 <script>

@@ -1,4 +1,8 @@
 #!flask/bin/python
+
+# @author: Miguel Grinberg
+# Base code with modifications from: http://blog.miguelgrinberg.com/
+
 import imp
 from migrate.versioning import api
 from app import db

@@ -1,4 +1,8 @@
 #!flask/bin/python
+
+# @author: Miguel Grinberg
+# Base code with modifications from: http://blog.miguelgrinberg.com/
+
 from migrate.versioning import api
 from config import SQLALCHEMY_DATABASE_URI
 from config import SQLALCHEMY_MIGRATE_REPO

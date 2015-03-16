@@ -36,36 +36,35 @@ h6, .h6 {
   }
 }
 
-
 /*
  * Masthead for nav
  */
 
-.blog-masthead {
+.masthead {
   background-color: #428bca;
   -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
           box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
 }
 
 /* Nav links */
-.blog-nav-item {
+.nav-item {
   position: relative;
   display: inline-block;
   padding: 10px;
   font-weight: 500;
   color: #cdddeb;
 }
-.blog-nav-item:hover,
-.blog-nav-item:focus {
+.nav-item:hover,
+.nav-item:focus {
   color: #fff;
   text-decoration: none;
 }
 
 /* Active state gets a caret at the bottom */
-.blog-nav .active {
+.nav .active {
   color: #fff;
 }
-.blog-nav .active:after {
+.nav .active:after {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -81,20 +80,20 @@ h6, .h6 {
 
 
 /*
- * Blog name and description
+ * Name and description
  */
 
-.blog-header {
+.header {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.blog-title {
+.title {
   margin-top: 30px;
   margin-bottom: 0;
   font-size: 60px;
   font-weight: normal;
 }
-.blog-description {
+.description {
   font-size: 20px;
   color: #999;
 }
@@ -104,7 +103,7 @@ h6, .h6 {
  * Main column and sidebar layout
  */
 
-.blog-main {
+.main {
   font-size: 18px;
   line-height: 1.5;
 }
@@ -126,41 +125,42 @@ h6, .h6 {
 }
 
 
-/* Pagination */
-.pager {
-  margin-bottom: 60px;
-  text-align: left;
-}
-.pager > li > a {
-  width: 140px;
-  padding: 10px 20px;
-  text-align: center;
-  border-radius: 30px;
-}
-
-
 /*
- * Blog posts
+ * Video Player
  */
 
-.blog-post {
+.player-class {
   margin-bottom: 60px;
 }
-.blog-post-title {
-  margin-bottom: 5px;
-  font-size: 40px;
-}
-.blog-post-meta {
-  margin-bottom: 20px;
-  color: #999;
+
+.player-center {
+  width: 70%;
+  margin: 0 auto;
 }
 
+.video-wrapper {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+    margin-bottom: 20px;
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 /*
  * Footer
  */
 
-.blog-footer {
+.footer {
   padding: 20px 0;
   position: absolute;
   bottom: 0;
@@ -171,17 +171,7 @@ h6, .h6 {
   text-align: center;
 }
 
-/*
-.blog-footer {
-  padding: 15px 0;
-  color: #999;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-top: 1px solid #e5e5e5;
-}
-*/
-
-.blog-footer p:last-child {
+.footer p:last-child {
   margin-bottom: 0;
 }
 
