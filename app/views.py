@@ -12,13 +12,14 @@ def index():
 def watch():
     video = request.args.get('v')
 
-    if video is None:
-        return render_template('index.html')
-
     user_id = User.query.order_by('user_id desc').first().user_id
     user_id = user_id+1
 
     top_ten = Video.query.order_by('play_count desc')
+
+    if video is None:
+        return redirect(url_for('watch', v='r9LelXa3U_I'))
+        #return render_template('watch.html', user_id=user_id, vid_id='r9LelXa3U_I', top_ten=top_ten)
 
     return render_template('watch.html', user_id=user_id, vid_id=video, top_ten=top_ten)
 

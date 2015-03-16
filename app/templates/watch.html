@@ -1,15 +1,6 @@
 <!-- extend base layout -->
 {% extends "base.html" %} {% block content %}
 
-<!--
-    {% if user_id  %}
-    <title>{{ user_id }} - Video</title>
-    {% else %}
-    <title>Welcome to YoutubeonRepeat</title>
-    {% endif %}
-    <h1>Hi, {{ user_id }} {{ vid_id  }}</h1>
-    -->
-
 <div class="row">
 
     <div class="col-sm-12 blog-main">
@@ -47,23 +38,6 @@
 
     </div>
     <!-- /.blog-main -->
-
-    <!--
-            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-                <div class="sidebar-module sidebar-module-inset">
-                    <h4>Top Videos</h4>
-                    <p>Push your favorite video to the top of the list!</p>
-                </div>
-                div class="sidebar-module">
-                    <div class="list-group" data-bind="foreach: topVideoList">
-                        <a href="#" class="list-group-item" data-bind="text: title"></a>
-                    </div>
-
-                </div>
-
-            </div>
-            -->
-    <!-- /.blog-sidebar -->
 
 </div>
 <script>

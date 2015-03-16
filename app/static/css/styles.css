@@ -2,9 +2,15 @@
  * Globals
  */
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
+  margin-bottom: 60px;
 }
 
 h1, .h1,
@@ -155,12 +161,26 @@ h6, .h6 {
  */
 
 .blog-footer {
-  padding: 40px 0;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/*
+.blog-footer {
+  padding: 15px 0;
   color: #999;
   text-align: center;
   background-color: #f9f9f9;
   border-top: 1px solid #e5e5e5;
 }
+*/
+
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
